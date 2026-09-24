@@ -24,6 +24,16 @@
             background: black;
         }
 
+        .banner {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            max-width: 100%;
+            image-rendering: pixelated;
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -37,15 +47,7 @@
             height: 200%;
         }
 
-        .twitter {
-            margin-top: 20px;
-            color: white;
-            font-family: "PixelOperator", monospace;
-            font-size: 80px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
+        .twitter,
         .itch {
             margin-top: 20px;
             color: white;
@@ -55,10 +57,7 @@
             cursor: pointer;
         }
 
-        .twitter:hover {
-            text-decoration: underline;
-        }
-
+        .twitter:hover,
         .itch:hover {
             text-decoration: underline;
         }
@@ -66,16 +65,49 @@
 </head>
 
 <body>
+
+    <img class="banner" src="assets/spr_undergoontitle.png" alt="UNDERGOON">
+
     <div class="container">
-        <img class="flowey" src="assets/spr_flowey_none.png" alt="Flowey">
 
-        <a class="twitter" href="https://x.com/UNDERGOONSFW" target="_blank" rel="noopener noreferrer">
+        <img
+            id="flowey"
+            class="flowey"
+            src="assets/spr_flowey_none.png"
+            alt="Flowey"
+        >
+
+        <a
+            class="twitter"
+            href="https://x.com/UNDERGOONSFW"
+            target="_blank"
+            rel="noopener noreferrer"
+            onmouseenter="changeFlowey('twitter')"
+            onmouseleave="changeFlowey('none')"
+        >
             TWITTER
+        </a>
 
-        <a class="itch" href="https://undergoon.itch.io/undergoon" target="_blank" rel="noopener noreferrer">
+        <a
+            class="itch"
+            href="https://undergoon.itch.io/undergoon"
+            target="_blank"
+            rel="noopener noreferrer"
+            onmouseenter="changeFlowey('itch')"
+            onmouseleave="changeFlowey('none')"
+        >
             ITCH.IO
         </a>
+
     </div>
+
+    <script>
+        function changeFlowey(type) {
+            document.getElementById("flowey").src =
+                "assets/spr_flowey_" + type + ".png";
+        }
+    </script>
+
 </body>
 </html>
 ```
