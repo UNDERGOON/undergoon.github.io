@@ -50,7 +50,8 @@
         }
 
         .twitter,
-        .itch {
+        .itch,
+        .discord {
             margin-top: 20px;
             color: white;
             font-family: "PixelOperator", monospace;
@@ -60,7 +61,8 @@
         }
 
         .twitter:hover,
-        .itch:hover {
+        .itch:hover,
+        .discord:hover {
             text-decoration: underline;
         }
     </style>
@@ -99,6 +101,17 @@
             onmouseleave="changeFlowey('none')"
         >
             ITCH.IO
+        </a>
+
+        <a
+            class="itch"
+            href="https://discord.gg/TQn8WdzNWy"
+            target="_blank"
+            rel="noopener noreferrer"
+            onmouseenter="changeFlowey('discord')"
+            onmouseleave="changeFlowey('none')"
+        >
+            DISCORD
         </a>
 
     </div>
